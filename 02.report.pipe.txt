@@ -10,11 +10,8 @@ filelist
 Total:
 11937888
 
-#grep "siblings" /proc/cpuinfo | wc -l
-siblings	: 4
-siblings	: 4
-siblings	: 4
-siblings	: 4
+#grep "processor" /proc/cpuinfo | wc -l
+4
 
 #find /media/long/Data/download/anh -type f -name "*.jpg" | wc -l
 0
