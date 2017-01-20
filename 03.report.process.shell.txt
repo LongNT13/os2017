@@ -40,8 +40,10 @@ voluntary_ctxt_switches:	273
 nonvoluntary_ctxt_switches:	75
 
 #kill -s STOP 6730
+[1]+  Stopped                 gnome-sudoku
 
 #kill -s CONT 6730
 
 #kill -s KILL 6730
+[1]+  Killed                 gnome-sudoku
 
