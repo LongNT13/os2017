@@ -1,0 +1,15 @@
+#: command line
+
+#less /proc/sched_debug | grep systemd
+         systemd     1       296.797326      2177   120        52.183409      1348.676218  15954977.250169 0 0 /autogroup-2
+   systemd-udevd   953      2367.292373      1342   120        71.537018       864.896806  15961328.296328 0 0 /autogroup-12
+ systemd-journal   929        67.241135       907   120        33.208763       199.371649  15948331.662332 0 0 /autogroup-8
+ systemd-timesyn  2022         0.065627       176   120         0.075257        41.205563  15877494.060290 0 0 /autogroup-31
+         systemd  3653        15.929538         8   120         0.011332        22.037180     20245.801191 0 0 /autogroup-104
+  systemd-logind  2521         6.694549       608   120        15.355583        55.156900  15944154.438131 0 0 /autogroup-41
+
+#less /proc/1/sched | grep switches
+nr_switches                                  :                 2177
+nr_voluntary_switches                        :                 1836
+nr_involuntary_switches                      :                  341
+
