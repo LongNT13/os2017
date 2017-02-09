@@ -1,0 +1,8 @@
+#: command line
+
+#ps -e | grep firefox
+ 4294 ?        00:02:16 firefox
+
+#ps -o nlwp 4294
+NLWP
+  47
