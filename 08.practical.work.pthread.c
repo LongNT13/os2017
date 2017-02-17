@@ -43,18 +43,7 @@ void print(item* a){
 	printf("\n-last : %d, first : %d\n\n",last,first);
 }
 
-void *thread_produce(item a, item b, item c){
-	produce(&a);print(&a);
-	produce(&b);print(&b);
-	produce(&c);print(&c);
-};
-
-void *thread_consume(){
-	consume();printf("\nConsumed : -last : %d, first : %d\n\n",last,first);
-	consume();printf("\nConsumed : -last : %d, first : %d\n\n",last,first);	
-};
-
-int main(){
+void *thread_produce(){
 	item disk1,disk2,disk3;
 	disk1.type=0;
 	disk1.amount=1;
@@ -65,10 +54,20 @@ int main(){
 	disk3.type=1;
 	disk3.amount=3;
 	disk3.unit=0;
+	produce(&disk1);print(&disk1);
+	produce(&disk2);print(&disk2);
+	produce(&disk3);print(&disk3);
+};
+
+void *thread_consume(){
+	consume();printf("\nConsumed : -last : %d, first : %d\n\n",last,first);
+	consume();printf("\nConsumed : -last : %d, first : %d\n\n",last,first);	
+};
+
+int main(){
 	pthread_t tid1,tid2;
-	pthread_create(&tid1,NULL,thread_produce(disk1,disk2,disk3),NULL );
-	pthread_create(&tid2,NULL,thread_consume(),NULL);	
-	pthread_join(tid1, NULL);
+	pthread_create(&tid1,NULL,thread_produce,NULL );
+	pthread_create(&tid2,NULL,thread_consume,NULL);	
 	pthread_join(tid2, NULL);
 	return 0;
 }
